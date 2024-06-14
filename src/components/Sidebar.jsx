@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -7,31 +8,16 @@ const Sidebar = () => {
         <div className="scroll-content">
             <nav className="iq-sidebar-menu">
               <ul id="iq-sidebar-toggle" className="iq-menu">
-                  <li className="">
-                    <a href="https://templates.iqonic.design/product/lite/socialv/html/dist/app/profile.html" className=" ">
-                        <i className="las la-user"></i><span>Profile</span>
-                    </a>
-                  </li>
                   <li className="active">
-                    <a href="https://templates.iqonic.design/product/lite/socialv/html/dist/dashboard/index.html" className=" ">
-                        <i className="las la-newspaper"></i><span>Messages</span>
-                    </a>
+                    <NavLink to="/">
+                        <i className="las la-user"></i><span>Profile</span>
+                    </NavLink>                    
                   </li>
                   <li className="">
-                    <a href="https://templates.iqonic.design/product/lite/socialv/html/dist/app/group.html" className=" ">
-                        <i className="las la-users"></i><span>News</span>
-                    </a>
-                  </li>
-                  <li className=" ">
-                    <a href="https://templates.iqonic.design/product/lite/socialv/html/dist/app/todo.html" className=" ">
-                        <i className="las la-check-circle"></i><span>Music</span>
-                    </a>
-                  </li>
-                  <li className=" ">
-                    <a href="https://templates.iqonic.design/product/lite/socialv/html/dist/dashboard/calendar.html" className=" ">
-                        <i className="las la-calendar"></i><span>Settings</span>
-                    </a>
-                  </li>
+                    <NavLink to="/dialogs" >
+                        <i className="las la-user"></i><span>Messages</span>
+                    </NavLink>
+                  </li>                  
               </ul>
             </nav>
         </div>

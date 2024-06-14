@@ -8,12 +8,12 @@ const Content = () => {
         <div className="content-page">
             <div className="container">
                 <div className="row">
-                    <BrowserRouter>
+                    
                         <Routes>
                             <Route element={<Profile/>} path="/"/>
                             <Route element={<Dialogs/>} path="/dialogs"/>
                         </Routes>
-                    </BrowserRouter>
+
                 </div>
             </div>
         </div>
