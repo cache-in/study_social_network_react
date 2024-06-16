@@ -1,3 +1,14 @@
 .textArea{
     border: none;
 }
+
+.btnWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.btnWrapper button{
+    min-width: 200px;
+}

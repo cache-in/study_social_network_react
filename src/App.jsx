@@ -3,15 +3,16 @@ import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
+  // debugger;
   return (
     <div>
       <BrowserRouter>
         <Sidebar />
         <Header />
-        <Content />
+        <Content store={props.store}/>
       </BrowserRouter>
     </div>);
 }
