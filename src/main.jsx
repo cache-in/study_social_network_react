@@ -12,16 +12,13 @@
 // serviceWorker.unregister();
 
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+// import ReactDOM from 'react-dom/client'
+// import App from './App.jsx'
 import './index.css'
+import renderDOM from './render';
 import store from "./redux/state";
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 // debugger;
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App store={store}/>
-  </React.StrictMode>,
-)
+renderDOM(store);
 

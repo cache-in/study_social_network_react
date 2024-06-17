@@ -6,10 +6,19 @@ const PostForm = (props) => {
 
     const updateText = (e) => {
         // debugger;
-        const text = e.target.value;
+        const text = inputRef.current.value;
 
         props.updateText(text);
     }
+
+    const createPost = (e) => {
+        // debugger;
+        const text = inputRef.current.value;
+
+        props.createPost();
+    }
+
+    const inputRef = React.createRef();
 
     console.log(props);
     const userID = props.user.id;
@@ -28,6 +37,7 @@ const PostForm = (props) => {
                         <input 
                             type="text" 
                             onInput={updateText}
+                            ref ={inputRef}
                             value={props.newText} 
                             className={"form-control rounded " + formStyle.textArea} 
                             placeholder="Write something here..."/>
@@ -37,7 +47,7 @@ const PostForm = (props) => {
                 {/* <hr>                  */}
                 </div>  
                 <div className={formStyle.btnWrapper}>
-                    <button onClick={props.createPost} className="btn btn-primary d-block">Send</button>             
+                    <button onClick={createPost} className="btn btn-primary d-block">Send</button>             
                 </div>
             </div>
         </div>
