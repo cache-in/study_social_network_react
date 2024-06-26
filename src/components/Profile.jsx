@@ -1,25 +1,19 @@
 import React from 'react';
-import PostForm from './post/PostForm';
-import PostItem from './post/PostItem';
+// import PostForm from './post/PostForm';
+import UserPosts from './post/UserPosts';
+import PostFormContainer from './post/PostFormContainer';
 
 const Profile = (props) => {
-    const createNewPost = props.profilePage.createNewPost;
-    const updateText = props.profilePage.updateText;
     const newText = props.profilePage.newText;
-
-    let posts = props.profilePage.posts.map(postData => {
-        return <PostItem user={props.user} key={postData.id} message={postData.message} />
-    });
 
     return (
         <div className="col-lg-8 row с p-0">            
-            <PostForm 
+            <PostFormContainer 
                 user={props.user} 
-                createPost={createNewPost} 
-                updateText={updateText}
+                dispatch={props.dispatch} 
                 newText={newText}
             />  
-            {posts}
+            <UserPosts posts={props.profilePage.posts} user={props.user} />
         </div>
     );
 }

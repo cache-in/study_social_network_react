@@ -4,10 +4,13 @@ import Profile from './Profile';
 import Dialogs from './Dialogs';
 
 const Content = (props) => {  
-    let profilePage = props.store._state.profilePage;  
-    let dialogsPage = props.store._state.dialogsPage;  
-    let users = props.store._state.user.users;  
-    let currentUser = props.store._state.user.getCurrentUser();
+    // debugger;
+    const state = props.store.getState();
+    let profilePage = state.profilePage;  
+    let dialogsPage = state.dialogsPage;  
+    let users = state.user.users;  
+    let currentUser = state.user.getCurrentUser();
+    const dispatch = props.store.dispatch.bind(props.store);
     // debugger;
     return (
         <div className="content-page">
@@ -15,12 +18,18 @@ const Content = (props) => {
                 <div className="row">                    
                     <Routes>
                         <Route
-                            element={<Profile user={currentUser} profilePage={profilePage}/>}
+                            element={<Profile user={currentUser} profilePage={profilePage} dispatch={dispatch}/>}
+                            // render={ () => 
+                            //     <Profile user={currentUser} profilePage={profilePage} dispatch={props.dispatch}/>
+                            // }
                             path="/"                            
                             
                         />  
                         <Route
-                            element={<Dialogs user={currentUser} users={users} posts={dialogsPage}/>}
+                            // render={ () => 
+                            //     <Dialogs user={currentUser} users={users} posts={dialogsPage}/>
+                            // }
+                            element={<Dialogs user={currentUser} users={users} posts={dialogsPage} dispatch={dispatch}/>}
                             path="/dialogs"                           
                         />
                     </Routes>
