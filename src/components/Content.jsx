@@ -2,6 +2,8 @@ import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import Profile from './Profile';
 import Dialogs from './Dialogs';
+// import ProfileProvider from '../redux/profileContext';
+// import ProfileContext from '../redux/profileContext';
 
 const Content = (props) => {  
     // debugger;
@@ -18,11 +20,13 @@ const Content = (props) => {
                 <div className="row">                    
                     <Routes>
                         <Route
-                            element={<Profile user={currentUser} profilePage={profilePage} dispatch={dispatch}/>}
+                            element={<Profile user={currentUser} dispatch={dispatch} profilePage={profilePage}/>}
+
                             // render={ () => 
                             //     <Profile user={currentUser} profilePage={profilePage} dispatch={props.dispatch}/>
                             // }
-                            path="/"                            
+                            path="/"   
+                                                     
                             
                         />  
                         <Route
